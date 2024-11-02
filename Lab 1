@@ -9,6 +9,20 @@ benzyna = droga/100 * spalanie
 koszty = benzyna * cena
 print(f"W trakcie przejechanej trasy w {droga}km twoj samochod spali {benzyna} litrow paliwa, co bedzie ci kosztowalo {koszty} zlotych")
 
+#Zadanie 15
+
+a = float(input("Podaj pierwszą liczbę: "))
+b = float(input("Podaj drugą liczbę: "))
+
+if a == 0:
+	if b == 0:
+		print("Równanie ma nieskończenie wiele rozwiązań.")
+	else:
+		print("Równanie nie ma rozwiązania.")
+else:
+	x = -b / a
+	print(f"Rozwiązanie równania to: x = {x}")
+
 #Zadanie 16
 
 import math
