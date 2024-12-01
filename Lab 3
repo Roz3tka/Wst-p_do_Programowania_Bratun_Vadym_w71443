@@ -1,1 +1,242 @@
+# Zadania 1
+
+#a
+"""
+imiona=["Vika", "Nadia", "Iryna", "Olena"]
+
+#print(imiona[0])
+
+for i in imiona:
+    print(i, end=" ")
+    """
+
+#b
+imiona=["Vika", "Nadia", "Iryna", "Olena"]
+
+posortowane=sorted(imiona)
+
+for i in imiona:
+    print(i, end=" ")
+
+#c nie wszystko
+imiona=["Olek", "Dima", "Bogdan", "Piotr"]
+
+for i in imiona:
+    print(i, end=" ")
+
+print("")
+
+#d nie wszystko
+
+imiona.insert(__index 2, __object: =)
+
+#zadanie 2
+
+import string
+
+zdanie = input("Wprowadź zdanie: ")
+
+# a)
+litery_w_zdaniu = set(zdanie.lower()) & set(string.ascii_lowercase)
+litery_alfabetu = set(string.ascii_lowercase)
+brakujace_litery = litery_alfabetu - litery_w_zdaniu
+
+print("\nLitery występujące w zdaniu (w kolejności alfabetycznej):")
+print("".join(sorted(litery_w_zdaniu)))
+print("Brakujące litery:")
+print("".join(sorted(brakujace_litery)))
+
+# b)
+usuniete_nieparzyste = "".join([znak for i, znak in enumerate(zdanie) if i % 2 == 0])
+print("\nZdanie po usunięciu znaków o nieparzystych indeksach:")
+print(usuniete_nieparzyste)
+
+# c)
+wyrazy = zdanie.split()
+wyrazy_z_wielkimi_literami = [wyraz[0].upper() + wyraz[1:-1] + wyraz[-1].upper() if len(wyraz) > 1 else wyraz.upper() for wyraz in wyrazy]
+zdanie_z_wielkimi_literami = " ".join(wyrazy_z_wielkimi_literami)
+print("\nZdanie z wyrazami rozpoczynającymi się i kończącymi wielką literą:")
+print(zdanie_z_wielkimi_literami)
+
+# d)
+najdluzsze_slowo = max(wyrazy, key=len)
+print("\nNajdłuższe słowo:")
+print(najdluzsze_slowo)
+print("Długość:", len(najdluzsze_slowo))
+
+# e)
+znaki_widoczne = set()
+zdanie_zamienione = ""
+for znak in zdanie:
+    if znak in znaki_widoczne:
+        zdanie_zamienione += "@"
+    else:
+        zdanie_zamienione += znak
+        znaki_widoczne.add(znak)
+
+print("\nZdanie z powtarzającymi się znakami zamienionymi na @:")
+print(zdanie_zamienione)
+
+#zadanie 3
+ciag = input("Wprowadź ciąg znaków: ")
+
+# Normalizacja - usunięcie spacji i zamiana na małe litery
+ciag_normalized = ciag.replace(" ", "").lower()
+
+# Sprawdzenie, czy ciąg jest palindromem
+if ciag_normalized == ciag_normalized[::-1]:
+    print("Podany ciąg jest palindromem!")
+else:
+    print("Podany ciąg nie jest palindromem.")
+
+# Zadania 4
+
+#a
+lista=["sdk", "qwer", "skrt", "kkt", "abc"]
+krotka=tuple(lista)
+
+#print(lista)
+#print(krotka)
+sumaZ=0
+sumaK=0
+sumaKT=0
+sumaW=0
+
+s=int(input("Podaj minimalną długość słowa: "))
+
+#b i
+for k in krotka:
+    #print(len(k))
+    sumaZ+=len(k)
+    #print(sumaZ)
+    """
+    if "k" in k:
+        sumaK+=1
+    """
+    for z in k:
+        #if "k" in z:
+        if z == "k":
+            sumaK += 1
+
+    #if "kt" in k:
+    #    sumaKT+=1
+    sumaKT=k.count("kt")
+    if len(k)>s:
+        sumaW+=1
+
+
+print(sumaZ)
+print(sumaK)
+print(sumaKT)
+print(sumaW)
+
+
+# zadanie 5
+listazakupow={"piwo": 4 "czipsy":9 "kitkat":4, "redbull":7}
+print(listazakupow)
+print(listazakupow.keys())
+print(listazakupow.items.values())
+
+
+for el in listazakupow:
+    #print(el)
+    print(f"na rachunku znajduje sie {el} za {listakluczow[el]} zl")
+    #print(f"na rachunku znajduje sie {el.keys()} za {listakluczow[el]} zl")
+for i in listazakupow.items():
+    print(f"na rachunku znajduje sie {i[0]} za {i[1]} zl")
+    
+for i in range():
+    listazakupow.keys()[i]
+    listazakupow.values()[i]
+
+#zadanie 6
+rachunki = {
+    "styczeń": 5,
+    "luty": 12,
+    "marzec": 8,
+    "kwiecień": 13,
+    "maj": 18,
+    "czerwiec": 2
+}
+
+# a)
+maksymalna = max(rachunki.values())
+minimalna = min(rachunki.values())
+suma = sum(rachunki.values())
+srednia = suma / len(rachunki)
+
+print("Rachunki za prąd:")
+print(f"Maksymalna wartość: {maksymalna}")
+print(f"Minimalna wartość: {minimalna}")
+print(f"Suma rachunków: {suma}")
+print(f"Średnia wartość: {srednia:.2f}")
+
+# b)
+ostatni_miesiac = list(rachunki.keys())[-1]
+rachunek_ostatni = rachunki[ostatni_miesiac]
+
+if rachunek_ostatni > srednia:
+    print("\nTrzeba zacisnąć pasa!")
+else:
+    print("\nWszystko okay.")
+
+#zadanie 7
+
+import random
+
+a = random.randint(3, 7)
+b = random.randint(3, 7)
+
+X = {random.randint(0, 10) for _ in range(a)}
+Y = {random.randint(0, 10) for _ in range(b)}
+
+print("Zbiór X:", X)
+print("Zbiór Y:", Y)
+
+if 5 in X:
+    print("Zbiór X zawiera liczbę 5.")
+else:
+    print("Zbiór X nie zawiera liczby 5.")
+
+print("Czy zbiór X jest podzbiorem zbioru Y?", X.issubset(Y))
+
+print("Czy zbiór Y jest podzbiorem zbioru X?", Y.issubset(X))
+
+print("Suma zbiorów X i Y:", X.union(Y))
+
+print("Różnica zbiorów X i Y:", X.difference(Y))
+
+print("Różnica zbiorów Y i X:", Y.difference(X))
+
+print("Iloczyn zbiorów X i Y:", X.intersection(Y))
+
+print("Najwyższy element w zbiorze X:", max(X))
+print("Najwyższy element w zbiorze Y:", max(Y))
+
+if X:
+    pierwszy_element = X.pop()
+    print(f"Usunięto element {pierwszy_element} ze zbioru X i dodano go do zbioru Y.")
+    Y.add(pierwszy_element)
+
+Y.update(X)
+print("Zbiór Y po przekopiowaniu elementów z X:", Y)
+
+X.clear()
+Y.clear()
+print("Zbiór X po wyczyszczeniu:", X)
+print("Zbiór Y po wyczyszczeniu:", Y)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
