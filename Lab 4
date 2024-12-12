@@ -1,0 +1,54 @@
+#zad 1
+import math
+
+def pole_kola(r):
+    return math.pi * r**2
+#zad 2
+def pole_trapezu(a, b, h):
+    return (a + b) * h / 2
+#zad 3
+def sprawdz_dodatnia():
+    x = float(input("Podaj liczbę: "))
+    if x > 0:
+        print("Liczba jest dodatnia.")
+    else:
+        print("Liczba nie jest dodatnia.")
+sprawdz_dodatnia()
+#zad 4
+def oblicz_bmi(waga, wzrost):
+    bmi = waga / (wzrost ** 2)
+    if bmi < 18.5:
+        zakres = "niedowaga"
+    elif 18.5 <= bmi < 24.9:
+        zakres = "waga prawidłowa"
+    elif 25 <= bmi < 29.9:
+        zakres = "nadwaga"
+    else:
+        zakres = "otyłość"
+    return bmi, zakres
+
+waga = float(input("Podaj wagę w kilogramach: "))
+wzrost = float(input("Podaj wzrost w metrach: "))
+
+bmi, zakres = oblicz_bmi(waga, wzrost)
+
+print(f"Twoje BMI to: {bmi:.2f}, co oznacza: {zakres}.")
+#zad 5
+def srednia(lista):
+    return sum(lista) / len(lista) if lista else 0
+
+lista_liczb = [3, 4, 5, 6]
+print(srednia(lista_liczb))  # Wyświetli: 4.5
+#zad 6
+def wypisz_imie_wiek(imie, wiek=20):
+    """
+    Funkcja wypisuje imię i wiek osoby.
+    Parametr 'wiek' ma wartość domyślną 20.
+    """
+    print(f"Imię: {imie}, Wiek: {wiek}")
+
+print(wypisz_imie_wiek.__doc__)  # Wyświetli: Funkcja wypisuje imię i wiek osoby...
+
+wypisz_imie_wiek("Jan")  # Wyświetli: Imię: Jan, Wiek: 20
+wypisz_imie_wiek("Anna", 25)  # Wyświetli: Imię: Anna, Wiek: 25
+#zad 7
