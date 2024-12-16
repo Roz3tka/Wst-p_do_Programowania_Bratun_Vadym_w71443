@@ -47,8 +47,65 @@ def wypisz_imie_wiek(imie, wiek=20):
     """
     print(f"Imię: {imie}, Wiek: {wiek}")
 
-print(wypisz_imie_wiek.__doc__)  # Wyświetli: Funkcja wypisuje imię i wiek osoby...
+print(wypisz_imie_wiek.__doc__)
 
-wypisz_imie_wiek("Jan")  # Wyświetli: Imię: Jan, Wiek: 20
-wypisz_imie_wiek("Anna", 25)  # Wyświetli: Imię: Anna, Wiek: 25
+wypisz_imie_wiek("Jan")
+wypisz_imie_wiek("Anna", 25)
 #zad 7
+
+import math
+
+def funkcja():
+    bc = 12
+    ac = 10
+
+    if ac > 0 and bc > 0:
+        bc_dzielone_przez_2 = bc/2
+        if ac > bc_dzielone_przez_2:
+            h = math.sqrt(ac**2 - bc_dzielone_przez_2**2)
+            P = 0.5 * bc * h
+            print(f"pole: {P}")
+        else:
+            print("dane nie tworza trojkata prostokatnego")
+    else:
+        print("podaj liczby wieksze od 0")
+funkcja()
+
+zad 8
+
+def potega_rekurencyjna(a, n):
+    if n == 0:
+        return 1
+    elif n < 0:
+        return 1 / potega_rekurencyjna(a, -n)
+    else:
+        return a * potega_rekurencyjna(a, n - 1)
+
+
+zad 9
+
+def fibonacci(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+zad 10
+
+def hanoi(n, source, target, auxiliary):
+    if n == 1:
+        print(f"Przenies krazek z {source} na {target}")
+    else:
+        hanoi(n - 1, source, auxiliary, target)
+        print(f"Przenieś krążek z {source} na {target}")
+        hanoi(n - 1, auxiliary, target, source)
+
+zad 11 
+
+def odwroc_string(s):
+    if len(s) == 0:
+        return s
+    else:
+        return s[-1] + odwroc_string(s[:-1])
