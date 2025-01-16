@@ -1,0 +1,238 @@
+#1
+#a
+import random
+
+szczesliwy_numerek = random.randint(1, 17)
+print(f"Szczęśliwy numerek: {szczesliwy_numerek}")
+#B
+roczniki = [2004, 2005, 2006, 2007]
+
+szczesliwy_rocznik = random.choice(roczniki)
+print(f"Szczęśliwy rocznik: {szczesliwy_rocznik}")
+#C
+lotto = random.sample(range(1, 50), 6)
+print(f"Wylosowane liczby w dużym lotku: {sorted(lotto)}")
+
+
+#3
+import math
+import cmath
+
+a = math.sqrt(81)
+b = math.pow(8, 10)
+x = math.sqrt(2)
+y = math.sqrt(3)
+z = math.sqrt(6)
+c = x + y + z
+d = cmath.sqrt(-5)
+ost = math.pow(125, 1/3)
+e = ost ** 3
+
+print(f"a = {a}")
+print(f"b = {b}")
+print(f"c = {c}")
+print(f"d = {d}")
+print(f"e = {e}")
+
+
+
+
+#3
+import time
+
+def sekundnik(sekunda):
+    while sekunda:
+        print("pozostalo", sekunda, "sekund")
+        sekunda -= 1
+        time.sleep(1)
+    print("minelo")
+
+sekundnik(int(input("ile sekund: ")))
+
+
+
+
+
+#4
+import datetime
+
+def dni_do_egzaminu():
+    dzis = datetime.datetime.today()
+    dzien_tyg = dzis.weekday()
+    dni_do_czw = (3 - dzien_tyg + 7) % 7 + 7
+    czwartek = dzis + datetime.timedelta(days=dni_do_czw)
+    dzis_format = dzis.strftime('%A, %d %B %Y')
+    czwartek_format = czwartek.strftime('%A, %d %B %Y')
+
+    print(f"Dziś jest: {dzis_format}")
+    print(f"Następny czwartek (za tydzień) to: {czwartek_format}")
+    print(f"Do egzaminu pozostało {dni_do_czw} dni.")
+
+dni_do_egzaminu()
+
+
+#5
+import keyword
+
+slowa = ['for', 'print', 'break', 'done', 'bad']
+
+for slowo in slowa:
+    if keyword.iskeyword(slowo):
+        print(f"'{slowa}' jest słowem kluczowym.")
+    else:
+        print(f"'{slowo}' nie jest słowem kluczowym.")
+
+
+
+#6
+import math
+import keyword
+
+def funkcje_w_modulach(modul):
+    return [func for func in dir(modul) if callable(getattr(modul, func))]
+
+print("Funkcje w module math:")
+print(funkcje_w_modulach(math))
+print()
+
+print("Funkcje w module keyword:")
+print(funkcje_w_modulach(keyword))
+print()
+
+print("Metody typu tuple:")
+print(funkcje_w_modulach(tuple))
+
+
+
+
+
+#7
+PI = 3.14159
+
+def obwod_kola(promien):
+    return 2 * PI * promien
+
+def pole_kola(promien):
+    return PI * (promien ** 2)
+
+
+
+#7.1
+import geometria
+
+promien = 16
+
+obwod = geometria.obwod_kola(promien)
+pole = geometria.pole_kola(promien)
+
+print(f"Obwód koła o promieniu {promien} wynosi: {obwod}")
+print(f"Pole koła o promieniu {promien} wynosi: {pole}")
+
+
+
+
+#8
+def c_to_f(celsius):
+    return (celsius * 9/5) + 32
+
+def f_to_c(fahrenheit):
+    return (fahrenheit - 32) * 5/9
+
+def c_to_k(celsius):
+    return celsius + 273.15
+
+
+
+#8.1
+import temperatura
+
+celsius = 21
+fahrenheit = temperatura.c_to_f(celsius)
+print(f"{celsius} stopni Celsjusza to {fahrenheit} stopni Fahrenheita.")
+
+fahrenheit = 89
+celsius = temperatura.f_to_c(fahrenheit)
+print(f"{fahrenheit} stopni Fahrenheita to {celsius} stopni Celsjusza.")
+
+celsius = 35
+kelviny = temperatura.c_to_k(celsius)
+print(f"{celsius} stopni Celsjusza to {kelviny} stopni Kelwina.")
+
+
+
+
+
+#9
+def kwadrat(x):
+    return x ** 2
+
+def szescian(x):
+    return x ** 3
+
+def dodaj(a, b):
+    return a + b
+
+
+#9.1
+from f_mat import kwadrat, szescian, dodaj
+
+# a) Obliczanie kwadratu liczby 10
+kwadrat_result = kwadrat(10)
+print(f"Kwadrat liczby 10 to: {kwadrat_result}")
+
+# b) Obliczanie sześcianu liczby 3
+szescian_result = szescian(3)
+print(f"Sześcian liczby 3 to: {szescian_result}")
+
+# c) Dodawanie liczb 10 i 5
+dodaj_result = dodaj(10, 5)
+print(f"Summa liczb 10 i 5 to: {dodaj_result}")
+
+
+
+#10
+import random
+import math
+
+def srednia_geometryczna(krotka):
+    iloczyn = 1
+    for liczba in krotka:
+        iloczyn *= liczba
+    return math.pow(iloczyn, 1 / len(krotka))
+
+min_wartosc = int(input("Podaj minimalną wartość przedziału: "))
+max_wartosc = int(input("Podaj maksymalną wartość przedziału: "))
+
+krotka = tuple(random.randint(min_wartosc, max_wartosc) for _ in range(10))
+
+srednia_geom = srednia_geometryczna(krotka)
+
+print(f"Krotka: {krotka}")
+print(f"Średnia geometryczna krotki: {srednia_geom:.2f}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
