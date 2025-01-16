@@ -4,12 +4,12 @@ import random
 
 szczesliwy_numerek = random.randint(1, 17)
 print(f"Szczęśliwy numerek: {szczesliwy_numerek}")
-#B
+#b
 roczniki = [2004, 2005, 2006, 2007]
 
 szczesliwy_rocznik = random.choice(roczniki)
 print(f"Szczęśliwy rocznik: {szczesliwy_rocznik}")
-#C
+#c
 lotto = random.sample(range(1, 50), 6)
 print(f"Wylosowane liczby w dużym lotku: {sorted(lotto)}")
 
@@ -176,15 +176,15 @@ def dodaj(a, b):
 #9.1
 from f_mat import kwadrat, szescian, dodaj
 
-# a) Obliczanie kwadratu liczby 10
+# a
 kwadrat_result = kwadrat(10)
 print(f"Kwadrat liczby 10 to: {kwadrat_result}")
 
-# b) Obliczanie sześcianu liczby 3
+# b
 szescian_result = szescian(3)
 print(f"Sześcian liczby 3 to: {szescian_result}")
 
-# c) Dodawanie liczb 10 i 5
+# c
 dodaj_result = dodaj(10, 5)
 print(f"Summa liczb 10 i 5 to: {dodaj_result}")
 
